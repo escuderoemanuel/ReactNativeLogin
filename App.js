@@ -10,7 +10,7 @@ export default function App() {
   return (
     <AlertNotificationRoot>
       <View style={styles.container}>
-        <StatusBar style="auto" />
+        <StatusBar style="light" />
         <Navigator />
       </View>
     </AlertNotificationRoot>

@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 20,
     paddingVertical: 10,
-    backgroundColor: 'pink',
+    backgroundColor: '#eb9ac0',
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10
   },

@@ -1,6 +1,7 @@
-import { StyleSheet, View } from 'react-native'
+import { View } from 'react-native'
 import { Entypo, Ionicons, FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { styles } from './NavbarStyles'
 
 const Navbar = () => {
   const navigation = useNavigation();
@@ -20,25 +21,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#212121',
-    width: '100%',
-    alignItems: 'center',
-  },
-  navbar: {
-    width: '90%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    backgroundColor: '#eb9ac0',
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10
-  },
-  iconNavbar: {
-    color: 'whitesmoke',
-    fontSize: 20
-  }
-})

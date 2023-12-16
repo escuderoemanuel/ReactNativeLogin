@@ -7,7 +7,7 @@ import Register from '../screens/Register';
 import Settings from '../screens/Settings';
 import Notifications from '../screens/Notifications';
 
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar/Navbar';
 
 import { View, StyleSheet } from 'react-native';
 

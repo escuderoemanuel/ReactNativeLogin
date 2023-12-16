@@ -9,14 +9,16 @@ import Notifications from '../screens/Notifications';
 
 import Navbar from '../components/Navbar';
 
+import { View, StyleSheet } from 'react-native';
+
 
 const Stack = createNativeStackNavigator();
 
 const Navigator = () => {
   return (
-    <>
+    <View style={styles.container} >
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator  >
           <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} />
           <Stack.Screen name="Profile" component={Profile} options={{ title: 'Profile' }} />
           <Stack.Screen name="Register" component={Register} options={{ title: 'Register' }} />
@@ -25,9 +27,17 @@ const Navigator = () => {
         </Stack.Navigator>
         <Navbar />
       </NavigationContainer>
-    </>
+    </View>
   );
 
 }
 
 export default Navigator;
+
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#212121',
+    flex: 1,
+  }
+})

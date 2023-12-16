@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Text, View, TextInput, StyleSheet } from 'react-native'
+import { Text, View, TextInput } from 'react-native'
 import { colors } from '../../global/colors'
-import Button from '../Button/Button'
 import { styles } from './LoginStyles'
+import { Dialog, ALERT_TYPE } from 'react-native-alert-notification'
+import Button from '../Button/Button'
 
 
 const Login = ({ navigation }) => {
@@ -10,30 +11,54 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const handleLogin = () => {
+    if (!email || !password) {
+      Dialog.show({
+        type: ALERT_TYPE.DANGER,
+        theme: 'dark',
+        title: 'Error',
+        textBody: 'Please fill all the fields',
+        button: 'Ok',
+        closeOnOverlayTap: false,
+      })
+      return
+    } else {
+      navigation.navigate('Profile')
+    }
+  }
+
   return (
-    <View style={styles.formContainer}>
-      <Text style={styles.loginText}>User</Text>
-      <TextInput style={styles.inputLogin}
-        placeholder='user@email.com'
-        keyboardType='email-address'
-        autoCapitalize='none'
-        autoCorrect={false}
-        textContentType='emailAddress'
-        returnKeyType='next'
-      />
+    <View style={styles.login}>
 
-      <Text style={styles.loginText}>Password</Text>
-      <TextInput style={styles.inputLogin}
-        placeholder='user@email.com'
-        keyboardType='email-address'
-        autoCapitalize='none'
-        autoCorrect={false}
-        textContentType='emailAddress'
-        returnKeyType='next'
-      />
+      <View style={styles.formContainer}>
+        <Text style={styles.loginText}>User</Text>
+        <TextInput style={styles.inputLogin}
+          placeholder='user@email.com'
+          keyboardType='email-address'
+          onChangeText={setEmail}
+          value={email}
+          editable={!loading}
+          autoCapitalize='none'
+          autoCorrect={false}
+          textContentType='emailAddress'
+        />
 
-      <Button style={styles.button} text='Login' backgroundColor={colors.dark} onPress={() => navigation.navigate('Profile')} />
+        <Text style={styles.loginText}>Password</Text>
+        <TextInput style={styles.inputLogin}
+          placeholder='password'
+          onChangeText={setPassword}
+          value={password}
+          editable={!loading}
+          autoCapitalize='none'
+          autoCorrect={false}
+          secureTextEntry
+          textContentType='password'
+        />
 
+        <Button style={styles.button} text='Login' backgroundColor={colors.dark} onPress={handleLogin} />
+
+
+      </View>
     </View>
   )
 }

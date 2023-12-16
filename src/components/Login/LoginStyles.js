@@ -2,6 +2,12 @@ import { StyleSheet } from 'react-native'
 import { colors } from '../../global/colors'
 
 export const styles = StyleSheet.create({
+  login: {
+    flex: 1,
+    backgroundColor: colors.dark,
+    alignItems: 'center',
+    padding: 20,
+  },
   formContainer: {
     width: '80%',
     marginTop: 50,
@@ -20,7 +26,7 @@ export const styles = StyleSheet.create({
     marginBottom: 25,
     borderRadius: 10,
     borderColor: colors.ligth,
-    color: colors.dark,
+    color: colors.gray,
     backgroundColor: colors.ligth,
     textAlign: 'right',
     fontWeight: 'light',

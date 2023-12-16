@@ -1,11 +1,12 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Home from '../screens/Home';
-import Profile from '../screens/Profile';
-import Register from '../screens/Register';
-import Settings from '../screens/Settings';
-import Notifications from '../screens/Notifications';
+import Header from '../components/Header/Header';
+import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import RegisterScreen from '../screens/RegisterScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
 
 import Navbar from '../components/Navbar/Navbar';
 
@@ -18,16 +19,20 @@ const Navigator = () => {
   return (
     <View style={styles.container} >
       <NavigationContainer>
-        <Stack.Navigator  >
-          <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} />
-          <Stack.Screen name="Profile" component={Profile} options={{ title: 'Profile' }} />
-          <Stack.Screen name="Register" component={Register} options={{ title: 'Register' }} />
-          <Stack.Screen name="Notifications" component={Notifications} options={{ title: 'Notifications' }} />
-          <Stack.Screen name="Settings" component={Settings} options={{ title: 'Settings' }} />
+        <Stack.Navigator
+          initialRouteName='Home'
+          screenOptions={({ navigation, route }) => ({
+            header: () => <Header title={route.name} navigation={navigation} />
+          })} >
+          <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
+          <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Profile' }} />
+          <Stack.Screen name="Register" component={RegisterScreen} options={{ title: 'Register' }} />
+          <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Notifications' }} />
+          <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
         </Stack.Navigator>
         <Navbar />
       </NavigationContainer>
-    </View>
+    </View >
   );
 
 }
@@ -37,7 +42,6 @@ export default Navigator;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#212121',
     flex: 1,
   }
 })

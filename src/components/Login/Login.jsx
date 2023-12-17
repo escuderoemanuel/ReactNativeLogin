@@ -23,6 +23,17 @@ const Login = ({ navigation }) => {
       })
       return
     } else {
+
+      Dialog.show({
+        type: ALERT_TYPE.SUCCESS,
+        theme: 'dark',
+        title: 'Success',
+        textBody: 'Login successful',
+        button: 'Ok',
+        closeOnOverlayTap: false,
+      })
+      setEmail('')
+      setPassword('')
       navigation.navigate('Home')
     }
   }

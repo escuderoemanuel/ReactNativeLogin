@@ -13,8 +13,8 @@ import Navbar from '../components/Navbar/Navbar';
 
 import { View, StyleSheet } from 'react-native';
 
-
 const Stack = createNativeStackNavigator();
+
 
 const Navigator = () => {
   return (
@@ -32,7 +32,7 @@ const Navigator = () => {
           <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Notifications' }} />
           <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
         </Stack.Navigator>
-        <Navbar />
+        {<Navbar />}
       </NavigationContainer>
     </View >
   );

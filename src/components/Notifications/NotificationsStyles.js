@@ -7,5 +7,8 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.dark,
     alignItems: 'center',
     padding: 20,
+  },
+  notificationsText: {
+    color: colors.ligth,
   }
 })

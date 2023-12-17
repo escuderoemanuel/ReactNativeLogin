@@ -21,12 +21,12 @@ const Navigator = () => {
     <View style={styles.container} >
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName='Login'
+          initialRouteName='Home'
           screenOptions={({ navigation, route }) => ({
             header: () => <Header title={route.name} navigation={navigation} />
           })} >
-          <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
           <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
+          <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
           <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Profile' }} />
           <Stack.Screen name="Register" component={RegisterScreen} options={{ title: 'Register' }} />
           <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Notifications' }} />

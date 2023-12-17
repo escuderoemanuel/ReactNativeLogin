@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Text, View, TextInput } from 'react-native'
+import { Text, View, TextInput, Pressable } from 'react-native'
 import { colors } from '../../global/colors'
 import { styles } from './LoginStyles'
 import { Dialog, ALERT_TYPE } from 'react-native-alert-notification'

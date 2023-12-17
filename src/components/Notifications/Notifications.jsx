@@ -4,7 +4,7 @@ import { styles } from './NotificationsStyles'
 const Notifications = () => {
   return (
     <View style={styles.notifications}>
-      <Text>Notifications</Text>
+      <Text style={styles.notificationsText}>Notifications</Text>
     </View>
   )
 }

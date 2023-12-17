@@ -1,8 +1,8 @@
 import Home from '../components/Home/Home'
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
 
   return (
-    <Home />
+    <Home navigation={navigation} />
   )
 }
 

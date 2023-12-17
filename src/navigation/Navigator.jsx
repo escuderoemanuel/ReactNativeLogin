@@ -32,7 +32,6 @@ const Navigator = () => {
           <Stack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'Notifications' }} />
           <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
         </Stack.Navigator>
-        {<Navbar />}
       </NavigationContainer>
     </View >
   );

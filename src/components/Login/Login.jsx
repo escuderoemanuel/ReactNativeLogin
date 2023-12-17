@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Text, View, TextInput, Pressable } from 'react-native'
 import { colors } from '../../global/colors'
 import { styles } from './LoginStyles'
@@ -10,6 +10,10 @@ const Login = ({ navigation }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+
 
   const handleLogin = () => {
     if (!email || !password) {
@@ -34,9 +38,18 @@ const Login = ({ navigation }) => {
       })
       setEmail('')
       setPassword('')
-      navigation.navigate('Home')
+      setIsLoggedIn(true)
     }
   }
+
+  useEffect(() => {
+    // Esta función se ejecuta cada vez que isLoggedIn cambia
+    console.log('isLoggedIn changed:', isLoggedIn);
+    if (isLoggedIn) {
+      navigation.navigate('Profile');
+    }
+  }, [isLoggedIn, navigation]);
+
 
   return (
     <View style={styles.login}>

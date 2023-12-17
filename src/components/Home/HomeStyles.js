@@ -5,9 +5,9 @@ import { colors } from '../../global/colors'
 export const styles = StyleSheet.create({
   home: {
     flex: 1,
-    backgroundColor: colors.dark,
     alignItems: 'center',
     padding: 20,
+    backgroundColor: colors.dark,
   },
   homeText: {
     color: colors.ligth,
@@ -22,13 +22,18 @@ export const styles = StyleSheet.create({
     width: 150,
     height: 50,
     justifyContent: 'center',
-    backgroundColor: colors.ligth,
+    backgroundColor: colors.lightBlue,
     borderRadius: 10,
   },
   buttonText: {
     color: colors.dark,
     fontSize: 18,
     textAlign: 'center',
-
-  }
+  },
+  /*  image: {
+     flex: 1,
+     resizeMode: "cover",
+     justifyContent: "center",
+     alignItems: "center",
+   } */
 })

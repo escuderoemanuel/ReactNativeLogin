@@ -9,7 +9,6 @@ import SettingsScreen from '../screens/SettingsScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
 import LoginScreen from '../screens/LoginScreen';
 
-import Navbar from '../components/Navbar/Navbar';
 
 import { View, StyleSheet } from 'react-native';
 
@@ -17,6 +16,7 @@ const Stack = createNativeStackNavigator();
 
 
 const Navigator = () => {
+
   return (
     <View style={styles.container} >
       <NavigationContainer>

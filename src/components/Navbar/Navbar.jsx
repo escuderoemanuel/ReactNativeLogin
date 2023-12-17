@@ -1,5 +1,5 @@
 import { View } from 'react-native'
-import { Entypo, Ionicons, FontAwesome } from '@expo/vector-icons';
+import { Entypo, Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from './NavbarStyles'
 

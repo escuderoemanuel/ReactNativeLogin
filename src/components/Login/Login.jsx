@@ -43,7 +43,7 @@ const Login = ({ navigation }) => {
   }
 
   useEffect(() => {
-    // Esta función se ejecuta cada vez que isLoggedIn cambia
+    // Check if the user is logged in and navigate to the profile page if they are
     console.log('isLoggedIn changed:', isLoggedIn);
     if (isLoggedIn) {
       navigation.navigate('Profile');

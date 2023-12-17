@@ -1,9 +1,9 @@
-import Login from '../components/Login/Login'
-const Home = ({ navigation }) => {
+import Home from '../components/Home/Home'
+const HomeScreen = () => {
 
   return (
-    <Login navigation={navigation} />
+    <Home />
   )
 }
 
-export default Home
+export default HomeScreen

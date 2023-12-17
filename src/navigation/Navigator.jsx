@@ -7,6 +7,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 import Navbar from '../components/Navbar/Navbar';
 
@@ -20,10 +21,11 @@ const Navigator = () => {
     <View style={styles.container} >
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName='Home'
+          initialRouteName='Login'
           screenOptions={({ navigation, route }) => ({
             header: () => <Header title={route.name} navigation={navigation} />
           })} >
+          <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
           <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
           <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Profile' }} />
           <Stack.Screen name="Register" component={RegisterScreen} options={{ title: 'Register' }} />

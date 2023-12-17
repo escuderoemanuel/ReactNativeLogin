@@ -23,7 +23,7 @@ const Login = ({ navigation }) => {
       })
       return
     } else {
-      navigation.navigate('Profile')
+      navigation.navigate('Home')
     }
   }
 
